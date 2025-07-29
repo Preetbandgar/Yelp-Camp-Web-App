@@ -109,12 +109,6 @@ Ready to try it out? Here’s how to set up the project.
     DB_URL=${DB_URL}  
     SECRET=${APP_SECRET}
      ```
-CLOUDINARY_CLOUD_NAME=${CLOUDINARY_CLOUD_NAME}  
-CLOUDINARY_KEY=${CLOUDINARY_KEY}  
-CLOUDINARY_SECRET=${CLOUDINARY_SECRET}  
-MAPBOX_TOKEN=${MAPBOX_TOKEN}  
-DB_URL=${DB_URL}  
-SECRET=${APP_SECRET}
 
 
 3. **Configure Jenkins**:
