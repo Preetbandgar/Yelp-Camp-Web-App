@@ -3,7 +3,7 @@
 
 ## 📝 Project Overview
 
-Hey there! Welcome to **Yelp Camp**, a web app where users can add, view, and rate campgrounds based on their location. This project is inspired by Colt Steele’s Web Developer Bootcamp but includes some tweaks and fixes to make it even better. It’s built with modern tools like Node.js, Express, and MongoDB, and it uses an automated Jenkins pipeline to handle testing and deployment. Whether you’re a student or a developer, this project is a great way to learn full-stack development and DevOps basics.
+Welcome to **Yelp Camp**, a web app where users can add, view, and rate campgrounds based on their location. This project is inspired by Colt Steele’s Web Developer Bootcamp but includes some tweaks and fixes to make it even better. It’s built with modern tools like Node.js, Express, and MongoDB, and it uses an automated Jenkins pipeline to handle testing and deployment. 
 
 > Note: All project files, including the pipeline and setup details, are in the GitHub repository.
 
@@ -144,16 +144,6 @@ docker compose up
 ```
 
 Visit `http://localhost:3000` in your browser.
-
----
-
-## 📥 Downloadable File
-
-Grab the project documentation as a PDF:
-
-⬇️ Download README.pdf (Includes setup and pipeline details)
-
-> Note: Save the file and open it with a PDF reader like Adobe Acrobat.
 
 ---
 
