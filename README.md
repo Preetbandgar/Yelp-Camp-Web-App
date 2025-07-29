@@ -101,7 +101,8 @@ Ready to try it out? Here’s how to set up the project.
 
 2. **Set Up Environment Variables**:
    - Create a `.env` file in the project root:
-     ```sh
+     
+```sh
 CLOUDINARY_CLOUD_NAME=[Your Cloudinary Cloud Name]
 CLOUDINARY_KEY=[Your Cloudinary Key]
 CLOUDINARY_SECRET=[Your Cloudinary Secret]
