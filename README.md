@@ -106,7 +106,6 @@ The app runs in a development environment with:
 
 ```bash
 git clone https://github.com/jaiswaladi246/3-Tier-Full-Stack.git  
-cd 3-Tier-Full-Stack
 ```
 
 2. **Set Up Environment Variables**:
