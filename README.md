@@ -102,14 +102,13 @@ Ready to try it out? Here’s how to set up the project.
 2. **Set Up Environment Variables**:
    - Create a `.env` file in the project root:
      ```sh
-    CLOUDINARY_CLOUD_NAME=${CLOUDINARY_CLOUD_NAME}  
-    CLOUDINARY_KEY=${CLOUDINARY_KEY}  
-    CLOUDINARY_SECRET=${CLOUDINARY_SECRET}  
-    MAPBOX_TOKEN=${MAPBOX_TOKEN}  
-    DB_URL=${DB_URL}  
-    SECRET=${APP_SECRET}
-     ```
-
+CLOUDINARY_CLOUD_NAME=[Your Cloudinary Cloud Name]
+CLOUDINARY_KEY=[Your Cloudinary Key]
+CLOUDINARY_SECRET=[Your Cloudinary Secret]
+MAPBOX_TOKEN=[Your Mapbox Token]
+DB_URL=[Your MongoDB Atlas Connection URL]
+SECRET=[Your Chosen Secret Key] # This can be any value you prefer
+```
 
 3. **Configure Jenkins**:
    - Install plugins for Git, Docker, and SonarQube.
