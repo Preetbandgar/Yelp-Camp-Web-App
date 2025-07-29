@@ -1,35 +1,154 @@
-# Yelp Camp Web Application
+# 🚀 Yelp Camp Web Application
 
-This web application allows users to add, view, access, and rate campgrounds by location. It is based on "The Web Developer Bootcamp" by Colt Steele, but includes several modifications and bug fixes. The application leverages a variety of technologies and packages, such as:
+## 📝 Project Overview
+Hey there! Welcome to **Yelp Camp**, a web app where users can add, view, and rate campgrounds based on their location. This project is inspired by Colt Steele’s *Web Developer Bootcamp* but includes some tweaks and fixes to make it even better. It’s built with modern tools like Node.js, Express, and MongoDB, and it uses an automated Jenkins pipeline to handle testing and deployment. Whether you’re a student or a developer, this project is a great way to learn full-stack development and DevOps basics.
 
-- **Node.js with Express**: Used for the web server.
-- **Bootstrap**: For front-end design.
-- **Mapbox**: Provides a fancy cluster map.
-- **MongoDB Atlas**: Serves as the database.
-- **Passport package with local strategy**: For authentication and authorization.
-- **Cloudinary**: Used for cloud-based image storage.
-- **Helmet**: Enhances application security.
-- ...
+> **Note**: All project files, including the pipeline and setup details, are in the [GitHub repository](https://github.com/jaiswaladi246/3-Tier-Full-Stack).
 
-## Setup Instructions
+---
 
-To get this application up and running, you'll need to set up accounts with Cloudinary, Mapbox, and MongoDB Atlas. Once these are set up, create a `.env` file in the same folder as `app.js`. This file should contain the following configurations:
+## 🏗️ Project Architecture
+Yelp Camp is designed as a client-server app:
+- **Frontend**: Uses Bootstrap for a clean, mobile-friendly interface.
+- **Backend**: Runs on Node.js and Express to manage API requests.
+- **Database**: Stores data in MongoDB Atlas, a cloud-based NoSQL database.
+- **Authentication**: Secures user logins with Passport.js.
+- **Images**: Handles campground photos with Cloudinary.
+- **Maps**: Shows campground locations with Mapbox.
+The app is packaged in a Docker container for easy deployment.
 
-```sh
-CLOUDINARY_CLOUD_NAME=[Your Cloudinary Cloud Name]
-CLOUDINARY_KEY=[Your Cloudinary Key]
-CLOUDINARY_SECRET=[Your Cloudinary Secret]
-MAPBOX_TOKEN=[Your Mapbox Token]
-DB_URL=[Your MongoDB Atlas Connection URL]
-SECRET=[Your Chosen Secret Key] # This can be any value you prefer
-```
+---
 
-After configuring the .env file, you can start the project by running:
-```sh
-docker compose up
-```
+## 🛠️ Tech Stack
+Here’s what we’re working with:
 
-## Application Screenshots
-![](./images/home.jpg)
-![](./images/campgrounds.jpg)
-![](./images/register.jpg)
+| Category                | Tools & Technologies                     |
+|-------------------------|------------------------------------------|
+| **Backend**             | Node.js, Express                         |
+| **Frontend**            | Bootstrap, HTML, CSS, JavaScript         |
+| **Database**            | MongoDB Atlas                            |
+| **Authentication**      | Passport.js (Local Strategy)             |
+| **Image Storage**       | Cloudinary                               |
+| **Mapping**             | Mapbox                                   |
+| **Containers**          | Docker                                   |
+| **CI/CD**               | Jenkins                                  |
+| **Artifact Registry**   | DockerHub                                |
+| **Security Scanning**   | Trivy                                    |
+| **Code Quality**        | SonarQube                                |
+
+---
+
+## ✨ Key Features
+- **Campground Management**: Add, view, edit, and delete campgrounds.
+- **Reviews & Ratings**: Let users rate and review campgrounds.
+- **Interactive Maps**: Show campground locations with Mapbox.
+- **Secure Logins**: Protect user accounts with Passport.js.
+- **Image Uploads**: Store photos in Cloudinary.
+- **Automated Pipeline**: Use Jenkins to test and deploy the app.
+- **Code Checks**: Ensure quality with SonarQube and security with Trivy.
+
+---
+
+## 🔄 CI/CD Pipeline
+The Jenkins pipeline automates the development process. Here’s how it works:
+
+| Stage                     | Description                                                                 |
+|---------------------------|-----------------------------------------------------------------------------|
+| **Git Checkout**          | Grabs the latest code from GitHub’s `main` branch.                          |
+| **Install Dependencies**  | Installs Node.js packages with `npm install`.                               |
+| **Unit Tests**            | Runs tests using `npm test`.                                               |
+| **Trivy FS Scan**         | Checks the filesystem for security issues.                                 |
+| **SonarQube Analysis**    | Analyzes code quality for the `Campground` project.                        |
+| **Docker Build & Tag**    | Builds a Docker image and tags it (`Preeet/camp:latest`).                  |
+| **Trivy Image Scan**      | Scans the Docker image for vulnerabilities.                                |
+| **Docker Push**           | Uploads the image to DockerHub.                                            |
+| **Deploy to Dev**         | Runs the app on port `3000` in a dev environment.                         |
+
+### Pipeline Details
+- **Tools**: Node.js 21, SonarQube Scanner.
+- **Credentials**: Git (`git-cred`) and DockerHub (`Dockerhub-cred`).
+- **Output**: Deploys the app locally for development.
+
+---
+
+## 🔧 Infrastructure Setup
+The app runs in a development environment with:
+- **DockerHub**: Stores the image (`Preeet/camp:latest`).
+- **Jenkins**: Manages the pipeline.
+- **SonarQube & Trivy**: Check code quality and security.
+- **MongoDB Atlas**: Handles data storage.
+- **Cloudinary & Mapbox**: Manage images and maps.
+
+---
+
+## 💡 Getting Started
+Ready to try it out? Here’s how to set up the project.
+
+### Prerequisites
+- **Node.js 21** (for the backend).
+- **Docker** (for containers).
+- **Jenkins** (with Git, Docker, and SonarQube plugins).
+- **SonarQube** (for code analysis).
+- **Trivy** (for security scans).
+- Accounts for **MongoDB Atlas**, **Cloudinary**, **Mapbox**, and **DockerHub**.
+
+### Setup Steps
+1. **Clone the Repository**:
+   ```bash
+   git clone https://github.com/jaiswaladi246/3-Tier-Full-Stack.git
+   cd 3-Tier-Full-Stack
+   ```
+
+2. **Set Up Environment Variables**:
+   - Create a `.env` file in the project root:
+     ```sh
+     CLOUDINARY_CLOUD_NAME=dcfl43qr3
+     CLOUDINARY_KEY=915796116983795
+     CLOUDINARY_SECRET=mHOOhKrLd9btpUsQlzHwlQgpjT8
+     MAPBOX_TOKEN=sk.eyJ1IjoiYmFuZGdhcnByaXRhbSIsImEiOiJjbHZteWQweXIwOGRlMm5uMWJ0eTEzZmI4In0.vX__2u6eB4iv33IOHfb7Iw
+     DB_URL=mongodb+srv://bandgarpritam8:owgIxXkV4AXUXFCM@3-tier-cicd.j4uwuv6.mongodb.net/?retryWrites=true&w=majority&appName=3-Tier-CICD
+     SECRET=Pritam
+     ```
+
+3. **Configure Jenkins**:
+   - Install plugins for Git, Docker, and SonarQube.
+   - Add credentials for Git (`git-cred`) and DockerHub (`Dockerhub-cred`).
+
+4. **Set Up SonarQube**:
+   - Start a SonarQube server and ensure the scanner is ready.
+
+5. **Run the Pipeline**:
+   - Create a Jenkins job with the provided Jenkinsfile and run it.
+
+6. **Test Locally**:
+   - Start the app with:
+     ```bash
+     docker compose up
+     ```
+   - Visit `http://localhost:3000` in your browser.
+
+---
+
+## 📥 Downloadable File
+Grab the project documentation as a PDF:
+- **[⬇️ Download README.pdf](./assets/README.pdf)** (Includes setup and pipeline details).
+
+> **Note**: Save the file and open it with a PDF reader like Adobe Acrobat.
+
+---
+
+## 🌟 Project Highlights
+- **Fun & Functional**: A campground app with maps and reviews.
+- **Fully Automated**: Jenkins makes updates a breeze.
+- **Secure & Clean**: Trivy and SonarQube keep the code solid.
+- **Cloud-Powered**: Uses MongoDB Atlas, Cloudinary, and Mapbox.
+
+---
+
+## 🙏 Acknowledgements
+This project was inspired by [DevOps Shack](https://www.youtube.com/@DevOpsShack) and Colt Steele’s *Web Developer Bootcamp*. Big thanks to the open-source community for tools like Jenkins, Docker, SonarQube, Trivy, MongoDB Atlas, Cloudinary, and Mapbox.
+
+---
+
+## 📬 Contact
+Got questions? Check out the repo: [3-Tier-Full-Stack](https://github.com/jaiswaladi246/3-Tier-Full-Stack).
