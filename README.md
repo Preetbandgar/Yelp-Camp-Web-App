@@ -102,13 +102,20 @@ Ready to try it out? Here’s how to set up the project.
 2. **Set Up Environment Variables**:
    - Create a `.env` file in the project root:
      ```sh
-     CLOUDINARY_CLOUD_NAME=dcfl43qr3
-     CLOUDINARY_KEY=915796116983795
-     CLOUDINARY_SECRET=mHOOhKrLd9btpUsQlzHwlQgpjT8
-     MAPBOX_TOKEN=sk.eyJ1IjoiYmFuZGdhcnByaXRhbSIsImEiOiJjbHZteWQweXIwOGRlMm5uMWJ0eTEzZmI4In0.vX__2u6eB4iv33IOHfb7Iw
-     DB_URL=mongodb+srv://bandgarpritam8:owgIxXkV4AXUXFCM@3-tier-cicd.j4uwuv6.mongodb.net/?retryWrites=true&w=majority&appName=3-Tier-CICD
-     SECRET=Pritam
+    CLOUDINARY_CLOUD_NAME=${CLOUDINARY_CLOUD_NAME}  
+    CLOUDINARY_KEY=${CLOUDINARY_KEY}  
+    CLOUDINARY_SECRET=${CLOUDINARY_SECRET}  
+    MAPBOX_TOKEN=${MAPBOX_TOKEN}  
+    DB_URL=${DB_URL}  
+    SECRET=${APP_SECRET}
      ```
+CLOUDINARY_CLOUD_NAME=${CLOUDINARY_CLOUD_NAME}  
+CLOUDINARY_KEY=${CLOUDINARY_KEY}  
+CLOUDINARY_SECRET=${CLOUDINARY_SECRET}  
+MAPBOX_TOKEN=${MAPBOX_TOKEN}  
+DB_URL=${DB_URL}  
+SECRET=${APP_SECRET}
+
 
 3. **Configure Jenkins**:
    - Install plugins for Git, Docker, and SonarQube.
